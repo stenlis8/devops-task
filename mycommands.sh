@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 if [[ -z $sleep_time ]];then
    sleep_time=30
@@ -6,7 +6,8 @@ else
    echo "sleep_time is $sleep_time seconds"
 fi
 
-adapter="$(ip route list | grep default | awk '{print $NF}')"
+#adapter="$(ip route list | grep default | awk '{print $NF}')"
+adapter="eth0"
 sys_route="/sys/class/net/$adapter/statistics"
 rx_bytes="$(cat $sys_route/rx_bytes)"
 rx_errors="$(cat $sys_route/rx_errors)"
