@@ -10,6 +10,7 @@ fi
 adapter="eth0"
 sys_route="/sys/class/net/$adapter/statistics"
 rx_bytes="$(cat $sys_route/rx_bytes)"
+echo $rx_bytes
 rx_errors="$(cat $sys_route/rx_errors)"
 tx_bytes="$(cat $sys_route/tx_bytes)"
 tx_errors="$(cat $sys_route/tx_errors)"
