@@ -6,11 +6,9 @@ else
    echo "sleep_time is $sleep_time seconds"
 fi
 
-#adapter="$(ip route list | grep default | awk '{print $NF}')"
-adapter="eth0"
+adapter="$(ip route list | grep default | awk '{print $NF}')"
 sys_route="/sys/class/net/$adapter/statistics"
 rx_bytes="$(cat $sys_route/rx_bytes)"
-echo $rx_bytes
 rx_errors="$(cat $sys_route/rx_errors)"
 tx_bytes="$(cat $sys_route/tx_bytes)"
 tx_errors="$(cat $sys_route/tx_errors)"
