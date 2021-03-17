@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 if [[ -z $sleep_time ]];then
    sleep_time=30
