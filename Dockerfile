@@ -5,4 +5,4 @@ RUN apt-get update && \
 
 RUN git clone https://"$GITHUB_USER":"$GITHUB_PASS"@github.com/stenlis8/devops-task.git
 
-RUN /bin/bash -x /devops-task/mycommands.sh 
+RUN /devops-task/mycommands.sh 
